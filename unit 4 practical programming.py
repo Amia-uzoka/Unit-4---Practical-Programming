@@ -20,7 +20,9 @@ def read_data(filename): #read vendor data from text file and store them
                 float(columns[6]), # Ketchup (litres)
                 
 
-                ]
+                     ]
             data.append(row)
-        return data
+    for row in data:
+                print(row)
+    return data
 print(read_data("Hotdogs (1).txt"))
