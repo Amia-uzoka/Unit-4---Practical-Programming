@@ -26,3 +26,25 @@ def read_data(filename): #read vendor data from text file and store them
                 print(row)
     return data
 print(read_data("Hotdogs (1).txt"))
+hotdog_data = read_data("Hotdogs (1).txt")
+#linear search
+def linear_search_unsorted(data, target):
+
+    for row in hotdog_data:
+        if row[1].lower() == target.lower():
+         
+            return row
+        
+    return None
+result = linear_search_unsorted(hotdog_data, "korner kart")
+if result is None:
+    print("vendor not found")
+
+else:
+        print("Vendor ID:", result[0])
+        print("Vendor name:", result[1])
+        print("Year and Week:", result[2])
+        print("Number of vegan hotdogs:", result[3])
+        print("Number of meat hotdogs:", result[4])
+        print("Onions (Kg):", result[5])
+        print("Ketchup (Litres):", result[6])
