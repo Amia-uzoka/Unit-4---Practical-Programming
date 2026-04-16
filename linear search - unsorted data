@@ -1,0 +1,31 @@
+def linear_search_unsorted(data, target):
+    
+    for row in hotdog_data:
+        if row[1].lower() == target.lower():
+         
+            return row
+        
+    return None
+
+try:
+    user_input = input("Search Vendors")
+    
+    if not user_input or not all(c.isalpha() or c.isspace() for c in user_input):
+        raise ValueError
+    
+    result = linear_search_unsorted(hotdog_data, user_input)
+    
+    if result is None:
+        print("vendor not found")
+
+    else:
+            print("Vendor ID:", result[0])
+            print("Vendor name:", result[1])
+            print("Year and Week:", result[2])
+            print("Number of vegan hotdogs:", result[3])
+            print("Number of meat hotdogs:", result[4])
+            print("Onions (Kg):", result[5])
+            print("Ketchup (Litres):", result[6])
+            
+except ValueError:
+    print("invalid input")
