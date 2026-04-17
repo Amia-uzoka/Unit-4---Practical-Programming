@@ -1,1 +1,29 @@
+#bubble sort
+def bubble_sort(data):
+    new_data = data.copy() # minimises risk of losing original data 
+    
+    for i in range(len(new_data)):#?
+        
+        for j in range(len(new_data) -1): # inner loop looks goes through each list in our dataset
+            
+            swapped = False
+            
+            if new_data[j][1].lower() > new_data[j+1][1].lower(): # take one list(J) within the dataset look at index one (vendor name) compare it to index one (vendor name) in the following list[J + 1) 
+
+                new_data[j], new_data[j + 1] = new_data[j + 1], new_data[j] #If j / first value is alhabetically higher than the next value swap them 
+
+                swapped = True # update status of list 
+                
+            if not swapped:
+                break
+            
+        return new_data #store the newly sorted dataset
+    
+bubble_sorted_data = bubble_sort(hotdog_data)
+user_input_view_sorted_file = input("Do you want to see the sorted file yes/no?")
+if user_input_view_sorted_file.lower()== "yes": #allow user option to see sorted file if they wish 
+    for row in sorted_data:
+        print(row)
+else:
+    exit
 
