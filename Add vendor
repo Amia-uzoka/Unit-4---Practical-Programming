@@ -1,0 +1,33 @@
+def add_vendor(data):
+    vendor_id = input("Enter vendor id in format").upper()
+    
+    vendor_name = input("Enter vendor name in format ")
+
+    
+    
+    Year_and_Week = input("Year and week of info in format ")
+    
+    number_of_vegan = input("enter number of vegsn hotdogs in format ")
+    
+    number_of_meat_hotdogs = input("Enter number of meatdogs in format ")
+    
+    onions = float(input("Enter kg of onions  in format "))
+    
+    ketchup = float(input("Enter ketchup in liters id in format "))
+    
+    new_vendor = [
+        vendor_id,
+        vendor_name,
+        number_of_vegan,
+        number_of_meat_hotdogs,
+        onions,
+        ketchup
+        ]
+    tf_data = data.copy
+    tf_data.append(new_vendor)
+    print("Vendor added")
+  
+
+add_vendor(hotdog_data)
+
+print(hotdog_data)
