@@ -1,0 +1,13 @@
+def validate_vendor_name(name): #VALIDATION - range check
+
+    if name == "":
+        print("name cannot be empty")
+    if len(name) < 2 or len(name) > 25:
+        print("invalid vendor name")
+
+    try: 
+        if not name or not all(c.isalpha() or c.isspace() for c in name):
+            raise ValueError
+        
+    except ValueError:
+        print("invalid input")
