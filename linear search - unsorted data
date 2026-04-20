@@ -1,3 +1,4 @@
+# round 1
 def linear_search_unsorted(data, target):
     
     for row in hotdog_data:
@@ -29,3 +30,73 @@ try:
             
 except ValueError:
     print("invalid input")
+
+
+
+
+
+# round 2
+def linear_search_unsorted(data):
+    target = input("Search Vendors")
+    
+    for row in hotdog_data:
+        if row[1].lower() == target.lower():
+         
+           
+            print("Vendor ID:", row[0])
+            print("Vendor name:", row[1])
+            print("Year and Week:", row[2])
+            print("Number of vegan hotdogs:", row[3])
+            print("Number of meat hotdogs:", row[4])
+            print("Onions (Kg):", row[5])
+            print("Ketchup (Litres):", row[6])
+            return       
+    else:
+        print("vendor not found")
+
+               
+#linear_search_unsorted(hotdog_data)
+
+
+#linear search nyw (name year week)
+def linear_search_unsorted_nyw(data):
+    target_name = input("Search Vendors")
+    target_yw = int(input("enter year week"))
+    
+    for row in hotdog_data:
+        if row[1].lower() == target_name.lower() and int(row[2])== target_yw:
+         
+            
+            print("Vendor ID:", row[0])
+            print("Vendor name:", row[1])
+            print("Year and Week:", row[2])
+            print("Number of vegan hotdogs:", row[3])
+            print("Number of meat hotdogs:", row[4])
+            print("Onions (Kg):", row[5])
+            print("Ketchup (Litres):", row[6])
+            return
+        
+        else:
+            print("vendor not found")
+            
+
+               
+#linear_search_unsorted_nyw(hotdog_data)
+
+
+
+def search_menu(data):
+    print( "option 1 search by vendor name")
+    print("option 2 seardh by vendor name year and week")
+
+    choice = int(input("enter choice 1 or 2"))
+
+    if choice == 1 :
+        linear_search_unsorted(hotdog_data)
+
+    elif choice == 2 :
+        linear_search_unsorted_nyw(hotdog_data)
+    else:
+        print("invalid option")
+
+search_menu(hotdog_data)
