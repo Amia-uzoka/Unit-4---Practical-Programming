@@ -31,3 +31,118 @@ def add_vendor(data):
 add_vendor(hotdog_data)
 
 print(hotdog_data)
+
+
+#-------------------------------------------------------------------------------------------------
+#ROUND 2
+import sys
+import datetime # module used to to format date objects
+def read_data(filename): #read vendor data from text file and store them
+    
+    data = [] # dataset
+    try:
+
+        with open(filename, "r") as file: #with statement makes sure file is closed after use
+            lines = file.readlines() #The readlines() method returns a list containing each line in the file as a list item.
+
+    except FileNotFoundError:
+         print("File not found")
+
+        
+    for item in lines:
+            columns = item.strip().split(",")
+            
+        
+            row = [
+                
+                columns[0], #vendor ID
+                columns[1], #Vendor name 
+                columns[2], # year and week 
+                int(columns[3]), #number of vegan hotdogs 
+                int(columns[4]), # Number of meat hotdogs 
+                float(columns[5]), # Onions(Kg)
+                float(columns[6]), # Ketchup (litres)
+                
+
+                     ]
+            data.append(row)
+
+            
+    # Unit test 1
+    # Test 1
+    #for row in data:
+        #print(row)
+    # Test 2
+    #print(data[9][0])
+    # Test3
+    
+    
+    
+        
+    return data
+    
+
+hotdog_data = read_data("Hotdogs (1).txt")
+
+        
+
+def add_vendor(data):
+    
+    vendor_id = input("Enter vendor id in the format - XX_DDD - ").upper()
+#-----------------------------------------------------------------------------
+    #validation
+    name_valid = True
+ 
+    try:
+        vendor_name = input("Enter vendor name in format")
+ 
+        if not vendor_name or not all(c.isalpha() or c.isspace() for c in vendor_name):
+            raise ValueError
+        if len(vendor_name) < 2 or len(vendor_name) > 25:
+            print("Invalid vendor name")
+            name_valid = False
+    except ValueError:
+        print("invalid vendor name")
+        name_valid = False
+        
+            
+        
+# -----------------------------------------------------------------------------------------
+
+    year_week = input("Year and week of info in format [ YYYYWW ] ")
+    if len(year_week) > 7:
+        print("invalid input")
+        
+    #format_check_yw = year_week.split("-")
+    formatweek = year_week [4:6]
+    if int(formatweek) < 1 or int(formatweek) > 52 :
+      print("invalid  week")
+        
+    
+#------------------------------------------------------------------------------------------------------    
+    number_of_vegan = input("Enter number of vegan hotdogs in format ")
+    
+    number_of_meat_hotdogs = input("Enter number of meatdogs in format ")
+    
+    onions = float(input("Enter Kg of onions "))
+    
+    ketchup = float(input("Enter ketchup in litres "))
+    
+    new_vendor = [
+        
+        vendor_id,
+        vendor_name,
+        number_of_vegan,
+        number_of_meat_hotdogs,
+        onions,
+        ketchup
+        
+        ]
+    safe_data = data.copy
+    safe_data.append(new_vendor)
+    print("Vendor added")
+  
+
+add_vendor(hotdog_data)
+
+print(hotdog_data)
