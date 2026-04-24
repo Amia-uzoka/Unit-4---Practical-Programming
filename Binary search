@@ -1,0 +1,16 @@
+def binary_search (data, target) :
+    target = input("Search Vendors")
+    low = 0
+    high = len(data) - 1
+
+    while low <= high:
+
+        mid = (low + high) // 2
+        if data[mid][1].lower() == target.lower():
+            return mid
+        elif data[mid][1].lower() < target.lower():
+            low = mid + 1
+        else:
+            high = mid -1
+    return -1 
+        
