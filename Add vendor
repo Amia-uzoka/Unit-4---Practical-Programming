@@ -146,3 +146,17 @@ def add_vendor(data):
 add_vendor(hotdog_data)
 
 print(hotdog_data)
+
+
+#---------------------------
+while True:
+
+        today = date.today()
+        current_year = today.strftime("%Y")
+        year= int(input("Enter year:"))
+        week = int(input("enter year:"))
+        if len(year) < 4  or  len(week) > 2 :
+            if not week < 1 or week > 52 :
+                print("invalid  week")
+            if not year > current_year :
+                print("invalid year inputed")  
