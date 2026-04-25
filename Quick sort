@@ -1,1 +1,49 @@
+def quick_sort(data): #sort by vendor and year and week
+    if len(data) <= 1:
+        return data
+    pivot = data[len(data)//2] #find median row
+    pivot_n = pivot[1].lower() #vendor name within that row
+    pivot_yw = int(pivot[2])   #year and week from that row 
+    
 
+    left =[]
+    middle = []
+    right = []
+    
+    for row in data: #for every list within data 
+        vendor = row[1].lower() #vendor name is index one of the list
+        yearweek = int(row[2])  #year and week are in index two of the list 
+        
+        if vendor < pivot_n :   #if vendor name less than pivot value
+            left.append(row)
+            
+        elif vendor > pivot_n:  #if vendor name is greater than pivot 
+            right.append(row)
+
+        else:
+
+            if yearweek < pivot_yw:     #if year and week are less than the pivot 
+               left.append(row)
+
+            elif yearweek > pivot_yw:   #if year and week are greater than the pivot 
+               right.append(row)
+               
+            else:
+                middle.append(row)      #if the values are the same place them in the middle
+
+  
+    return quick_sort(left)+ middle + quick_sort(right) #sort all the values in the sub lists then join them 
+    
+quick_sort(hotdog_data)
+quick_sorted_data = quick_sort(hotdog_data)
+    
+view_file_qs = input("Do you want to see the sorted file yes/no?: ")
+    
+if view_file_qs.lower()== "yes": #allow user option to see sorted file if they wish 
+    
+    for row in quick_sorted_data:
+        print(row)
+        print("") #?
+    print("File sorted")
+else:
+    print("File sorted")
