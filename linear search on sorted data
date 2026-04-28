@@ -1,1 +1,22 @@
-
+def linear_search_sorted_nyw(data):
+    quick_sort(hotdog_data)
+    target_name = input("Search Vendors")
+    target_yw = int(input("enter year week"))
+    
+    for row in hotdog_data:
+        if row[1].lower() == target_name.lower() and int(row[2])== target_yw:
+         
+            
+            print("Vendor ID:", row[0])
+            print("Vendor name:", row[1])
+            print("Year and Week:", row[2])
+            print("Number of vegan hotdogs:", row[3])
+            print("Number of meat hotdogs:", row[4])
+            print("Onions (Kg):", row[5])
+            print("Ketchup (Litres):", row[6])
+            return
+        
+        else:
+            print("vendor not found")
+            
+linear_search_sorted_nyw(hotdog_data)
