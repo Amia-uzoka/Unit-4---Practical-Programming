@@ -100,3 +100,48 @@ def search_menu(data):
         print("invalid option")
 
 search_menu(hotdog_data)
+
+
+
+
+#-------------------------------------------------------------------------------------
+
+#linear search nyw (name year week)
+
+
+def linear_search_unsorted_nyw(data):
+
+
+    try:
+        
+        found = False
+        target_name = input("Search vendors: ")
+        target_yw = int(input("Enter year(Y) and week(W) in the format YYYYWW: "))
+        
+        for row in hotdog_data:
+            if row[1].lower() == target_name.lower() and int(row[2])== target_yw:
+                
+        #check index 1 in every list(vendors names) and index the 2 (year & week) if they are equal to the users target
+        #print the vendors information    
+                print(" ")
+                print("Vendor ID:", row[0])
+                print("Vendor name:", row[1])
+                print("Year and Week:", row[2])
+                print("Number of vegan hotdogs:", row[3])
+                print("Number of meat hotdogs:", row[4])
+                print("Onions (Kg):", row[5])
+                print("Ketchup (Litres):", row[6])
+                found = True
+                return
+                
+        if not found:
+              print(" ")  
+              print("vendor not found")
+          
+    except ValueError:
+                print(" ")
+                print("Year and week must be numeric characters ")
+            
+
+               
+#linear_search_unsorted_nyw(hotdog_data)
