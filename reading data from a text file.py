@@ -109,7 +109,7 @@ def read_data(filename): #read vendor data from text file and store them
                 int(float((columns[3]))), #number of vegan hotdogs 
                 int(float(columns[4])), # Number of meat hotdogs 
                 float(columns[5]), # Onions(Kg)
-                float(columns[6]), # Ketchup (litres)
+                int(columns[6]), # Ketchup (litres)
                 
 
                      ]
