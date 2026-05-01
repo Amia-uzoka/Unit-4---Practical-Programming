@@ -34,10 +34,4 @@ def quick_sort(data): #sort by vendor and year and week
   
     return quick_sort(left)+ middle + quick_sort(right)
     
-quick_sorted_data = quick_sort(hotdog_data)
-user_input_view_sorted_filee = input("Do you want to see the sorted file yes/no?: ")
-if user_input_view_sorted_filee.lower()== "yes": #allow user option to see sorted file if they wish 
-    for row in quick_sorted_data:
-        print(row)
-else:
-    exit  
+print("File Sorted")
