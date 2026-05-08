@@ -42,8 +42,8 @@ def read_data(filename):
 hotdog_data = read_data("Hotdogs.txt")
 
 
-for row in hotdog_data:
-    print(row)
+#for row in hotdog_data:
+    #print(row)
 
 
 
@@ -87,7 +87,7 @@ def linear_search_unsorted_nyw(data):
         print("Year and week must be numeric characters ")
 
 #----------------------------------------
-#linear_search_unsorted_nyw(hotdog_data)
+linear_search_unsorted_nyw(hotdog_data)
 #----------------------------------------
 
 
@@ -156,7 +156,7 @@ def display_vendors_qs():
         sys.exit()
 
 #----------------------------------------
-#display_vendors_qs()
+display_vendors_qs()
 #---------------------------------------
 
 
@@ -196,7 +196,7 @@ def linear_search_sorted_nyw(data):
         print("Year and week must be numeric characters ")
 
 #--------------------------------------------
-#linear_search_sorted_nyw(quick_sorted_data)
+linear_search_sorted_nyw(quick_sorted_data)
 #--------------------------------------------
 
 #----------------------------------------------- binary search
@@ -235,7 +235,7 @@ def binary_search(data):
     return None
 
 #-----------------------------
-#binary_search(quick_sorted_data)
+binary_search(quick_sorted_data)
 #-------------------------------
 
 #---------------------------------------------------------------bubble sort
@@ -520,7 +520,7 @@ def vendor_analysis(data):
     return results
 
 #---------------------------
-# vendor_analysis(hotdog_data)
+vendor_analysis(hotdog_data)
 #----------------------------
 
 
