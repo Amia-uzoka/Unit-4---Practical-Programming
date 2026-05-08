@@ -565,6 +565,7 @@ import time
 start_time = time.perf_counter()
 
 bubble_sort(hotdog_data)
+display_vendors_bs()
 
 end_time = time.perf_counter()
 
@@ -579,7 +580,7 @@ import time
 start_time = time.perf_counter()
 
 quick_sort(hotdog_data)
-
+display_vendors_qs()
 end_time = time.perf_counter()
 
 time_passed = end_time - start_time
@@ -596,7 +597,6 @@ start_time = time.perf_counter()
 
 
 binary_search(quick_sorted_data)
-
 
 end_time = time.perf_counter()
 
