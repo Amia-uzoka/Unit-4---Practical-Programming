@@ -81,11 +81,10 @@ def vendor_analysis(data):
     )
     return results
 
-
+#-----------------------------------------------
 # vendor_analysis(hotdog_data)
-
-# ----------------------------------------------------------------------------------
-
+# ----------------------------------------------
+#------------------------------------------------------------------------
 
 import json  # module needed to access the json.dump(x,f,indent)
 
@@ -99,7 +98,7 @@ def save_analysis(filename):
             analysis_results, file, indent=4
         )  # converts dictionary into a file format
 
-    print(f"Results succesfully saved to{filename}")
+    print(f"Results succesfully saved to: {filename}")
 
 
 save_analysis("AnalysisOutput.txt")
