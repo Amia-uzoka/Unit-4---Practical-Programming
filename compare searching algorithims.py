@@ -157,20 +157,34 @@ def binary_search(data):
     print("Vendor not found")
     return None
 
-
-# -------------------------------------------------------------------------------------
+# ---------------------------------------------------compare the efficiency of the binary searching algorithm
 
 import time
 
 start_time = time.perf_counter()
 
-#linear_search_sorted_nyw(quick_sorted_data)
 
 binary_search(quick_sorted_data)
-
 
 end_time = time.perf_counter()
 
 time_passed = end_time - start_time
 
 print(f"Binary search (on sorted data) took: {time_passed:.6f} seconds")
+# --------------------------------------------------------------------------
+print("\n")
+
+# ---------------------------------------------------compare the efficiency of the linear searching algorithim (sorted)
+
+import time
+
+start_time = time.perf_counter()
+
+linear_search_sorted_nyw(quick_sorted_data)
+
+end_time = time.perf_counter()
+
+time_passed = end_time - start_time
+
+print(f"Linear search (on sorted data) took: {time_passed:.6f} seconds")
+# --------------------------------------------------------------------------
