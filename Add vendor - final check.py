@@ -43,17 +43,17 @@ hotdog_data = read_data("Hotdogs.txt")
 # print(row)
 # -------------------------------------------------------------
 
-passcode = 1082421
+PASSCODE = 1082421
 
 """Allow user to add vendors to the file"""
 def add_vendor(data):
 
     user_password = int(input("Please enter password in order to continue "))
-    if user_password != passcode:
+    if user_password != PASSCODE:
         print("You are not authorised to use this feature")
         sys.exit()
 
-    elif user_password == passcode:
+    elif user_password == PASSCODE:
         print("Passcode approved")
 
         # -------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ def add_vendor(data):
             # validation ensuring vendor ID is in the correct format
 
             vendor_id = input(
-                "Enter vendor ID Ensure its in the format XX_YYY  (two letters an underscore followed by 3 numbers "
+                "Enter vendor ID Ensure its in the format XX_YYY  (two letters an underscore followed by 3 numbers) "
             ).upper()
             try:
                 if len(vendor_id) == 6:
